@@ -1,0 +1,49 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "SignUp_LogIn",
+    "dateExported": "2024-03-08T17:40:48.213Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "a9938951-d3d2-4a91-9135-adad0ea494bf",
+            "colId": "1a4a9548-fa28-4587-8065-c916504627af",
+            "containerId": "",
+            "name": "Sign up",
+            "url": "localhost:3000/ProyectoFinal/v1/auth/signUp",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-08T16:41:42.879Z",
+            "modified": "2024-03-08T17:36:55.917Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Aquiles Castro\",\n  \"correo\": \"acastro@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "19962131-25d5-4c73-a673-af82dbbd5155",
+            "colId": "1a4a9548-fa28-4587-8065-c916504627af",
+            "containerId": "",
+            "name": "login",
+            "url": "localhost:3000/ProyectoFinal/v1/auth/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-08T16:41:42.878Z",
+            "modified": "2024-03-08T17:37:13.980Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\": \"acastro@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        }
+    ]
+}
