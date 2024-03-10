@@ -1,0 +1,61 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "ADMIN",
+    "dateExported": "2024-03-10T02:34:59.763Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "8af19a77-0d1d-456f-8e6c-96c0b2b13747",
+            "colId": "2a00f412-c1e7-411e-a818-ffaa659fd89e",
+            "containerId": "",
+            "name": "Delete account",
+            "url": "localhost:3000/ProyectoFinal/v1/users/65ed1549b734d3d8cf4e1fd2",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-03-10T02:17:10.927Z",
+            "modified": "2024-03-10T02:17:10.927Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dbd84505-2f0c-4779-b74b-c746cc44c08d",
+            "colId": "2a00f412-c1e7-411e-a818-ffaa659fd89e",
+            "containerId": "",
+            "name": "Edit account",
+            "url": "localhost:3000/ProyectoFinal/v1/users/65ed1549b734d3d8cf4e1fd2",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-03-10T02:24:50.888Z",
+            "modified": "2024-03-10T02:31:22.897Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMGVhY2I3MzRkM2Q4Y2Y0ZTFmY2IiLCJub21icmUiOiJMdWlzIEZpZ28iLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMDM0Njg2LCJleHAiOjE3MTAwNDkwODZ9.19pYFQmmX6e6pLKrJlB1dcLlZEbjlaYOWVfZwlKqPCM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Alvaro Díaz\",\n  \"email\": \"alvarito@gmail.com\",\n  \"rol\": \"CLIENTE_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9bf57129-815c-4fc0-acc1-e6f7e85d8028",
+            "colId": "2a00f412-c1e7-411e-a818-ffaa659fd89e",
+            "containerId": "",
+            "name": "Account list",
+            "url": "localhost:3000/ProyectoFinal/v1/users/",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-03-10T02:32:10.196Z",
+            "modified": "2024-03-10T02:32:20.702Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

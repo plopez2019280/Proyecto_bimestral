@@ -1,4 +1,11 @@
-export const roles = {
-  ADMIN_ROLE: "ADMIN_ROLE",
-  CLIENT_ROLE: "CLIENT_ROLE",
-};
+import mongoose from 'mongoose';
+
+const RoleSchema = mongoose.Schema({
+    rol: {
+        type: String,
+        required: [true , 'The rol obligatory']
+    },
+});
+
+
+export default mongoose.model('Role', RoleSchema);

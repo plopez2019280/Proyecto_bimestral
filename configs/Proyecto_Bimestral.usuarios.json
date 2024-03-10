@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "65ed200092f855af17b82c6c"
+  },
+  "nombre": "Lionel Messi",
+  "correo": "goat10@gmail.com",
+  "password": "$2a$10$aQ.ixxkAcheIxf2xlOApWONsnYPXiHTOT3I4dUA4QW84LQ1FfTxfO",
+  "rol": "ADMIN_ROLE",
+  "estado": true,
+  "google": false,
+  "cart": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed202892f855af17b82c72"
+  },
+  "nombre": "El bicho 77",
+  "correo": "comandante@gmail.com",
+  "password": "$2a$10$w/lA1R3RjUQyA3ToC5BjDuWzH11nN8coICCtPxUkHF1SJ1hLAC8zO",
+  "rol": "CLIENTE_ROLE",
+  "estado": true,
+  "google": false,
+  "cart": [],
+  "__v": 0
+}]

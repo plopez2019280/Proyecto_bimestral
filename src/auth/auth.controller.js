@@ -1,54 +1,57 @@
-import bcryptjs from "bcryptjs";
-import Usuario from "../users/user.model.js";
-import { generarJWT } from "../helpers/generate-jwt.js";
+import { request, response } from 'express';
+import bcrypt from 'bcryptjs';
 
-export const login = async (req, res) => {
+import { generarJWT } from '../helpers/generate-jwt.js';
+import Usuario from '../users/user.model.js';
+
+export const login = async (req = request, res = response) => {
+
   const { correo, password } = req.body;
 
   try {
-    const usuario = await Usuario.findOne({ correo });
 
+
+    const usuario = await Usuario.findOne({ correo });
     if (!usuario) {
       return res.status(400).json({
-        msg: "Incorrect credentials, Email does not exist in the database",
+        msg: 'User / Password are incorrect - (The email doesn`t exists)'
       });
     }
+
     if (!usuario.estado) {
       return res.status(400).json({
-        msg: "The user does not exist in the database",
+        msg: 'User / Password are incorrect - status: false'
       });
     }
-    const validPassword = bcryptjs.compareSync(password, usuario.password);
-    if (!validPassword) {
-      return res.status(400).json({
-        msg: "Password is incorrect",
-      });
-    }
-    const token = await generarJWT(usuario.id);
 
-    res.status(200).json({
-      msg: "Login",
-      usuario,
-      token,
-    });
-  } catch (e) {
-    console.log(e);
+    const validarPassword = bcrypt.compareSync(password, usuario.password);
+    if (!validarPassword) {
+      return res.status(400).json({
+        msg: 'User / Password are incorrect - (password incorrect)'
+      });
+    }
+
+
+    const token = await generarJWT(usuario.id, usuario.nombre, usuario.cart);
+
+    res.json({
+      msg: '>---LOGGED IN---<',
+      correo, password,
+      token
+    })
+
+  } catch (error) {
+    console.log(error);
     res.status(500).json({
-      msg: "Contact administrator",
+      msg: 'Talk to the administrator'
     });
   }
-};
 
-export const signUp = async (req, res) => {
-  const { nombre, correo, password } = req.body;
-  const usuario = new Usuario({ nombre, correo, password });
 
-  const salt = bcryptjs.genSaltSync();
-  usuario.password = bcryptjs.hashSync(password, salt);
 
-  await usuario.save();
+}
 
-  res.status(200).json({
-    usuario,
-  });
-};
+
+export default {
+  login
+}

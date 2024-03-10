@@ -1,17 +1,45 @@
-export const tieneRole = (...roles) => {
-  return (req, res, next) => {
-    if (!req.usuario) {
-      return res.status(500).json({
-        msg: "You want to verify a role without validating the token first",
-      });
+import { request, response } from 'express';
+
+export const esAdminRole = (req = request, res = response, next) => {
+
+    if ( !req.usuario ) {
+        return res.status(500).json({
+            msg: '>---You need to have a token first---<'
+        });
     }
 
-    if (!roles.includes(req.usuario.role)) {
-      return res.status(401).json({
-        msg: `Unauthorized user, has a role ${req.usuario.role}, authorized roles are ${roles}`,
-      });
+    const { rol, nombre } = req.usuario;
+
+    if ( rol !== 'ADMIN_ROLE' ) {
+        return res.status(500).json({
+            msg: `${ nombre } is not administrator - It does not have permission`
+        });
     }
 
     next();
-  };
-};
+
+
+}
+
+export const tieneRole = ( ...roles ) => {
+
+    return (req = request, res= response, next) => {
+
+        if (!req.usuario) {
+            return res.status(500).json({
+                msg: '>---You need to have a token first---<'
+            })
+        }
+
+        if (!roles.includes( req.usuario.rol)) {
+            return res.status(401).json({
+                msg: `This action requires one of the followin roles: ${ roles }`
+            })
+
+        }
+
+        next();
+
+    }
+
+}
