@@ -1,58 +1,310 @@
 {
     "client": "Thunder Client",
     "collectionName": "ADMIN",
-    "dateExported": "2024-03-10T02:34:59.763Z",
+    "dateExported": "2024-03-10T06:06:09.458Z",
     "version": "1.1",
-    "folders": [],
+    "folders": [
+        {
+            "_id": "407c7cb8-c806-49fa-b096-db2f4c7f0947",
+            "name": "Categories",
+            "containerId": "",
+            "created": "2024-03-10T20:28:38.492Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "81df7ff2-119b-4004-8c83-c9f7a7904356",
+            "name": "Products",
+            "containerId": "",
+            "created": "2024-03-10T03:58:09.427Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "89bd305f-9d22-4a0b-a518-2aebc8a048f7",
+            "name": "Search",
+            "containerId": "",
+            "created": "2024-03-10T06:03:32.419Z",
+            "sortNum": 30000
+        }
+    ],
     "requests": [
         {
-            "_id": "8af19a77-0d1d-456f-8e6c-96c0b2b13747",
-            "colId": "2a00f412-c1e7-411e-a818-ffaa659fd89e",
-            "containerId": "",
-            "name": "Delete account",
-            "url": "localhost:3000/ProyectoFinal/v1/users/65ed1549b734d3d8cf4e1fd2",
-            "method": "DELETE",
-            "sortNum": 30000,
-            "created": "2024-03-10T02:17:10.927Z",
-            "modified": "2024-03-10T02:17:10.927Z",
+            "_id": "dfd730a9-fcad-47f9-af9e-8aa00b6003d4",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "89bd305f-9d22-4a0b-a518-2aebc8a048f7",
+            "name": "Buscar Productos por Categoria",
+            "url": "localhost:3000/ProyectoFinal/v1/buscar/categorias/BOTINES",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-10T06:02:59.916Z",
+            "modified": "2024-03-10T06:02:59.916Z",
             "headers": [],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
-            "_id": "dbd84505-2f0c-4779-b74b-c746cc44c08d",
-            "colId": "2a00f412-c1e7-411e-a818-ffaa659fd89e",
-            "containerId": "",
-            "name": "Edit account",
-            "url": "localhost:3000/ProyectoFinal/v1/users/65ed1549b734d3d8cf4e1fd2",
-            "method": "PUT",
-            "sortNum": 50000,
-            "created": "2024-03-10T02:24:50.888Z",
-            "modified": "2024-03-10T02:31:22.897Z",
+            "_id": "8952f388-5727-45fd-a584-059af13bc886",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "407c7cb8-c806-49fa-b096-db2f4c7f0947",
+            "name": "Create category",
+            "url": "localhost:3000/ProyectoFinal/v1/category/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-10T20:27:21.381Z",
+            "modified": "2024-03-10T20:31:05.075Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMGVhY2I3MzRkM2Q4Y2Y0ZTFmY2IiLCJub21icmUiOiJMdWlzIEZpZ28iLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMDM0Njg2LCJleHAiOjE3MTAwNDkwODZ9.19pYFQmmX6e6pLKrJlB1dcLlZEbjlaYOWVfZwlKqPCM"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMjAwMDkyZjg1NWFmMTdiODJjNmMiLCJub21icmUiOiJMaW9uZWwgTWVzc2kiLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMTAyMzQyLCJleHAiOjE3MTAxMTY3NDJ9.ybYttv1ySZFZLqlMSIM3SFS5cUZG31l7mwtgzmqZ8to"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Alvaro Díaz\",\n  \"email\": \"alvarito@gmail.com\",\n  \"rol\": \"CLIENTE_ROLE\"\n}",
+                "raw": "{\n    \"nombre\": \"botines\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "9bf57129-815c-4fc0-acc1-e6f7e85d8028",
-            "colId": "2a00f412-c1e7-411e-a818-ffaa659fd89e",
+            "_id": "88f2fe3d-7272-4010-beec-0a1fdf19f608",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "89bd305f-9d22-4a0b-a518-2aebc8a048f7",
+            "name": "Buscar Productos por Nombre",
+            "url": "localhost:3000/ProyectoFinal/v1/buscar/productos/p",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-10T06:02:56.935Z",
+            "modified": "2024-03-10T06:02:56.935Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "e3ae82ea-2621-4e5f-bfda-95b7c33d2e95",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "",
+            "name": "Delete account",
+            "url": "localhost:3000/ProyectoFinal/v1/users/65ed1e8c0df98a810d699637",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-03-10T02:35:27.730Z",
+            "modified": "2024-03-10T02:45:21.120Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMWU4YzBkZjk4YTgxMGQ2OTk2MzciLCJub21icmUiOiJMaW9uZWwgTWVzc2kiLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMDM4Njg0LCJleHAiOjE3MTAwNTMwODR9.vL6qguWWquGV8g57kS28jih5W8roQD65MCsAw_ICAL0"
+                }
+            ],
+            "params": [],
+            "reqType": "del",
+            "tests": []
+        },
+        {
+            "_id": "ee941028-6fae-410d-a585-138a0b1f2aad",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "81df7ff2-119b-4004-8c83-c9f7a7904356",
+            "name": "Register product",
+            "url": "localhost:3000/ProyectoFinal/v1/product/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-10T06:03:15.724Z",
+            "modified": "2024-03-10T06:03:15.724Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMjAwMDkyZjg1NWFmMTdiODJjNmMiLCJub21icmUiOiJMaW9uZWwgTWVzc2kiLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMTAyMzQyLCJleHAiOjE3MTAxMTY3NDJ9.ybYttv1ySZFZLqlMSIM3SFS5cUZG31l7mwtgzmqZ8to"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"nombre\": \"NK Phantom GX Academy FG DD9473-600\",\n    \"precio\": 399.99,\n    \"stock\": 20,\n    \"categoria\": \"65ed4c89a8b648dfbdce9628\",\n    \"descripcion\": \"Para usar en superficies naturales y sintéticas\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "5a3bbe8e-8aee-4570-ad72-b00882572da9",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "81df7ff2-119b-4004-8c83-c9f7a7904356",
+            "name": "Product list",
+            "url": "localhost:3000/ProyectoFinal/v1/product/",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-10T06:03:50.868Z",
+            "modified": "2024-03-10T06:03:50.868Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2M2VlY2JkMWFiZmQ1ZjU5NTM5N2EyMTciLCJub21icmUiOiJNYXJpYW5vIEVzY2FsYW50ZSIsInJvbCI6Ik1BRVNUUk9fUk9MRSIsImlhdCI6MTY3Njg1ODUyNiwiZXhwIjoxNjc2ODYyMTI2fQ.k5mZg7kHkCmmDxJ-1xLSxfE0aERgp6YrZ8Tu1v6eYnI",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "4ff9371b-42e8-4b22-a2b0-9e0e8285863b",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "",
+            "name": "Edit account",
+            "url": "localhost:3000/ProyectoFinal/v1/users/65ed1caf26e270aca9e6c682",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-03-10T02:35:27.732Z",
+            "modified": "2024-03-10T02:39:31.421Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMWM4MjI2ZTI3MGFjYTllNmM2N2MiLCJub21icmUiOiJMdWlzIEZpZ28iLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMDM4MTUxLCJleHAiOjE3MTAwNTI1NTF9.hXLq4eygaLBf9l6z-su0gpWN6amMWcGxdnZrVGW7rA0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Alvaro Díaz\",\n  \"email\": \"alvarito@gmail.com\",\n  \"rol\": \"CLIENTE_ROL\"\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "tests": []
+        },
+        {
+            "_id": "d0bb9235-c7ae-4a6c-b1d0-2cdcdc22c44d",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "81df7ff2-119b-4004-8c83-c9f7a7904356",
+            "name": "Update product",
+            "url": "localhost:3000/ProyectoFinal/v1/product/65ed392cb78769bab5911fc0",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-03-10T06:03:56.084Z",
+            "modified": "2024-03-10T06:03:56.084Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMjAwMDkyZjg1NWFmMTdiODJjNmMiLCJub21icmUiOiJMaW9uZWwgTWVzc2kiLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMTAyMzQyLCJleHAiOjE3MTAxMTY3NDJ9.ybYttv1ySZFZLqlMSIM3SFS5cUZG31l7mwtgzmqZ8to"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"nombre\": \"ps5\",\n    \"precio\": 499.99,\n    \"stock\": 13,\n    \"categoria\": \"65ee1bc31b76b69949dfcded\",\n    \"descripcion\": \"Teclado Lenovo con Luces Gamer\"\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "tests": []
+        },
+        {
+            "_id": "16caf5d0-531d-40de-8a36-4f11785a927a",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "81df7ff2-119b-4004-8c83-c9f7a7904356",
+            "name": "Delete product",
+            "url": "localhost:3000/ProyectoFinal/v1/product/65ed35b9cbfe10de88813945",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-03-10T06:04:00.868Z",
+            "modified": "2024-03-10T06:04:00.868Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMjAwMDkyZjg1NWFmMTdiODJjNmMiLCJub21icmUiOiJMaW9uZWwgTWVzc2kiLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMTAyMzQyLCJleHAiOjE3MTAxMTY3NDJ9.ybYttv1ySZFZLqlMSIM3SFS5cUZG31l7mwtgzmqZ8to"
+                }
+            ],
+            "params": [
+                {
+                    "name": "x-token",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "reqType": "del",
+            "tests": []
+        },
+        {
+            "_id": "06c6d507-16de-4231-a156-bfcccd554110",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
             "containerId": "",
             "name": "Account list",
             "url": "localhost:3000/ProyectoFinal/v1/users/",
             "method": "GET",
             "sortNum": 70000,
-            "created": "2024-03-10T02:32:10.196Z",
-            "modified": "2024-03-10T02:32:20.702Z",
+            "created": "2024-03-10T02:35:27.733Z",
+            "modified": "2024-03-10T02:35:27.733Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3740ba2c-6add-49ad-bb04-535d50485b8e",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "407c7cb8-c806-49fa-b096-db2f4c7f0947",
+            "name": "Category list",
+            "url": "localhost:3000/ProyectoFinal/v1/category/",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-03-10T20:28:52.613Z",
+            "modified": "2024-03-10T20:29:00.249Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b747820c-a629-4475-98be-e9858759972c",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "407c7cb8-c806-49fa-b096-db2f4c7f0947",
+            "name": "Change category",
+            "url": "localhost:3000/ProyectoFinal/v1/category/65ee1bc31b76b69949dfcded",
+            "method": "PUT",
+            "sortNum": 100000,
+            "created": "2024-03-10T20:29:37.270Z",
+            "modified": "2024-03-10T05:56:27.037Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMjAwMDkyZjg1NWFmMTdiODJjNmMiLCJub21icmUiOiJMaW9uZWwgTWVzc2kiLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMTAyMzQyLCJleHAiOjE3MTAxMTY3NDJ9.ybYttv1ySZFZLqlMSIM3SFS5cUZG31l7mwtgzmqZ8to"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"accesorios\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0bbe6bda-6753-487f-9f89-016e4d2e241d",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "407c7cb8-c806-49fa-b096-db2f4c7f0947",
+            "name": "Delete category",
+            "url": "localhost:3000/ProyectoFinal/v1/category/65ee1af713b01c3bc6e5fae2",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2024-03-10T20:31:18.490Z",
+            "modified": "2024-03-10T20:43:20.332Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMjAwMDkyZjg1NWFmMTdiODJjNmMiLCJub21icmUiOiJMaW9uZWwgTWVzc2kiLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMTAyMzQyLCJleHAiOjE3MTAxMTY3NDJ9.ybYttv1ySZFZLqlMSIM3SFS5cUZG31l7mwtgzmqZ8to"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1636d446-a78f-4230-a4e3-c31b9a2b56fc",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "407c7cb8-c806-49fa-b096-db2f4c7f0947",
+            "name": "Search category",
+            "url": "localhost:3000/ProyectoFinal/v1/category/buscar/b",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-03-10T20:44:31.593Z",
+            "modified": "2024-03-10T20:59:09.891Z",
             "headers": [],
             "params": [],
             "tests": []
