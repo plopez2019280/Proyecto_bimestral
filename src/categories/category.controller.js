@@ -1,129 +1,87 @@
-import {
-    response,
-    request
-} from "express";
-import bcryptjs from 'bcryptjs';
-import Category from '../category/category.model.js';
+import { request, response } from 'express';
+import Categoria from '../categories/category.model.js';
 
-export const categoryGet = async(req , res = response) => {
-    const {
-        limite,
-        desde
-    } = req.query;
-    const query = {
-        estado: true
-    };
-    const [total, category] = await Promise.all([
-        Category.countDocuments(query),
-        Category.find(query)
-        .skip(Number(desde))
-        .limit(Number(limite))
+
+export const getCategorias = async (req = request, res = response) => {
+
+    const query = { estado: true };
+
+    const listaCategorias = await Promise.all([
+        Categoria.countDocuments(query),
+        Categoria.find(query).populate('usuario', 'nombre')
     ]);
 
-    res.status(200).json({
-        total,
-        category
+    res.json({
+        msg: '>---CATEGORY LIST---<',
+        listaCategorias
     });
+
 }
 
-export const categoryPost = async(req, res) => {
-    const {
+
+export const getCategoriaPorID = async (req = request, res = response) => {
+
+    const { id } = req.params;
+    const categoriaById = await Categoria.findById(id).populate('usuario', 'nombre');
+
+    res.status(201).json(categoriaById);
+}
+
+
+export const postCategoria = async (req = request, res = response) => {
+    const nombre = req.body.nombre.toUpperCase();
+
+    const categoriaDB = await Categoria.findOne({ nombre });
+
+    if (categoriaDB) {
+        return res.status(400).json({
+            msg: `The category ${categoriaDB.nombre}, already exists`
+        });
+    }
+
+    const data = {
+        nombre,
+        usuario: req.usuario._id
+    }
+
+    const categoria = new Categoria(data);
+    await categoria.save();
+
+    res.status(201).json({
+        msg: '>---CATEGORY CREATED---<',
         categoria
-    } = req.body;
-
-    const usuario = req.usuario;
-
-    if (usuario.role !== 'ADMIN_ROLE') {
-        return res.status(403).json({
-            error: 'Only admin users can edit categories'
-        });
-    }
-
-    try {
-        const category = new Category({
-            categoria
-        });
-        await category.save();
-
-        res.status(201).json({
-            msg: "Category created successfully",
-            category
-        });
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({
-            msg: "Error creating category"
-        });
-    }
-};
-
-export const categoryPut = async(req, res ) => {
-    const {
-        categoria
-    } = req.body;
-    const usuario = req.usuario;
-    const {
-        id
-    } = req.params;
-    const {
-        _id,
-        ...resto
-    } = req.body;
-
-    if (usuario.role !== 'ADMIN_ROLE') {
-        return res.status(403).json({
-            error: 'Only admin users can edit categories'
-        });
-    }
-
-    await Category.findByIdAndUpdate(id, resto);
-
-    const category = await Category.findOne({
-        _id: id
-    });
-
-    res.status(200).json({
-        msg: 'Updated Category',
-        category
     });
 }
 
 
-export const categoryDelete = async(req, res) => {
-    const {
-        id
-    } = req.params;
+export const putCategoria = async (req = request, res = response) => {
 
-    try {
-        const categoriaPredeterminada = await Category.findOne({
-            nombre: 'productsEliminados'
-        });
-        if (!categoriaPredeterminada) {
-            return res.status(404).json({
-                msg: 'Default category "productsEliminados" not found'
-            });
-        }
+    const { id } = req.params;
+    const { estado, usuario, ...resto } = req.body;
 
-        const category = await Category.findByIdAndUpdate(id, {
-            estado: false
-        }, {
-            new: true
-        });
+    resto.nombre = resto.nombre.toUpperCase();
+    resto.usuario = req.usuario._id;
 
-        await Product.updateMany({
-            categoria: id
-        }, {
-            categoria: categoriaPredeterminada._id
-        });
+    const categoriaEditada = await Categoria.findByIdAndUpdate(id, resto, { new: true });
 
-        res.status(200).json({
-            msg: 'Category deleted and products transferred to "productsEliminados"',
-            category
-        });
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({
-            msg: 'Error while deleting category and transferring products'
-        });
-    }
+    res.status(201).json({
+        msg: '>---CATEGORY UPDATED---<',
+        categoriaEditada
+    });
+
 }
+
+export const deleteCategoria = async (req = request, res = response) => {
+
+    const { id } = req.params;
+
+    const categoriaBorrada = await Categoria.findByIdAndUpdate(id, { estado: false }, { new: true });
+
+    res.status(201).json({
+        msg: '>---CATEGORY ELIMINATED---<',
+        categoriaBorrada
+    });
+
+}
+
+
