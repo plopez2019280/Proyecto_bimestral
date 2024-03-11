@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "65ed35b9cbfe10de88813945"
+  },
+  "nombre": "TECLADO LENOVO GAMING",
+  "estado": false,
+  "usuario": {
+    "$oid": "65ed200092f855af17b82c6c"
+  },
+  "precio": 499.99,
+  "stock": 13,
+  "categoria": {
+    "$oid": "65ecf178c66639e2687273d7"
+  },
+  "descripcion": "Teclado Lenovo con Luces Gamer",
+  "disponible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed392cb78769bab5911fc0"
+  },
+  "nombre": "PS5",
+  "estado": false,
+  "usuario": {
+    "$oid": "65ed200092f855af17b82c6c"
+  },
+  "precio": 499.99,
+  "stock": 13,
+  "categoria": {
+    "$oid": "65ee1bc31b76b69949dfcded"
+  },
+  "descripcion": "Teclado Lenovo con Luces Gamer",
+  "disponible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed4c9ba8b648dfbdce962f"
+  },
+  "nombre": "NK PHANTOM GX ACADEMY FG DD9473-600",
+  "estado": true,
+  "usuario": {
+    "$oid": "65ed200092f855af17b82c6c"
+  },
+  "precio": 399.99,
+  "stock": 20,
+  "categoria": {
+    "$oid": "65ed4c89a8b648dfbdce9628"
+  },
+  "descripcion": "Para usar en superficies naturales y sintéticas",
+  "disponible": true,
+  "__v": 0
+}]

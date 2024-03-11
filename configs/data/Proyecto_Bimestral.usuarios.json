@@ -8,7 +8,14 @@
   "rol": "ADMIN_ROLE",
   "estado": true,
   "google": false,
-  "cart": [],
+  "cart": [
+    {
+      "itemId": "65ed4c9ba8b648dfbdce962f",
+      "quantity": 2,
+      "nombre": "NK PHANTOM GX ACADEMY FG DD9473-600",
+      "precio": 399.99
+    }
+  ],
   "__v": 0
 },
 {

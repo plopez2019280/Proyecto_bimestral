@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "65ee1bc31b76b69949dfcded"
+  },
+  "nombre": "ACCESORIOS",
+  "estado": true,
+  "usuario": {
+    "$oid": "65ed200092f855af17b82c6c"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed4c89a8b648dfbdce9628"
+  },
+  "nombre": "BOTINES",
+  "estado": true,
+  "usuario": {
+    "$oid": "65ed200092f855af17b82c6c"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "65ee8a8d15e8531922912995"
+  },
+  "NITEmisor": "1234567-8",
+  "usuario": {
+    "$oid": "65ed200092f855af17b82c6c"
+  },
+  "nombreUsuario": "Lionel Messi",
+  "NITReceptor": "8765432-2",
+  "cart": [],
+  "total": 0,
+  "estado": true,
+  "fecha": {
+    "$date": "2024-03-11T04:37:33.042Z"
+  },
+  "__v": 0
+}]

@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "ADMIN",
-    "dateExported": "2024-03-11T05:25:20.603Z",
+    "dateExported": "2024-03-11T06:25:01.422Z",
     "version": "1.1",
     "folders": [
         {
@@ -31,6 +31,13 @@
             "containerId": "",
             "created": "2024-03-10T06:03:32.419Z",
             "sortNum": 30000
+        },
+        {
+            "_id": "e5341bf3-cf24-4d25-babb-998608e76330",
+            "name": "Bills",
+            "containerId": "",
+            "created": "2024-03-11T06:23:51.710Z",
+            "sortNum": 50000
         }
     ],
     "requests": [
@@ -75,6 +82,31 @@
             "tests": []
         },
         {
+            "_id": "affebbc3-2a83-4b06-a0c2-61789b4894ca",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "e5341bf3-cf24-4d25-babb-998608e76330",
+            "name": "Register bill",
+            "url": "localhost:3000/ProyectoFinal/v1/bill/",
+            "method": "POST",
+            "sortNum": 5000,
+            "created": "2024-03-11T06:24:16.001Z",
+            "modified": "2024-03-11T06:24:16.001Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMjAwMDkyZjg1NWFmMTdiODJjNmMiLCJub21icmUiOiJMaW9uZWwgTWVzc2kiLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMTMxNzQyLCJleHAiOjE3MTAxNDYxNDJ9.4ntGM0Im631ZdWHkFYDZuVMYH5a5Yxt0XFhLMumqnSg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NITReceptor\": \"8765432-2\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
             "_id": "dfd730a9-fcad-47f9-af9e-8aa00b6003d4",
             "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
             "containerId": "89bd305f-9d22-4a0b-a518-2aebc8a048f7",
@@ -111,6 +143,26 @@
                 "raw": "{\n    \"nombre\": \"botines\"\n}",
                 "form": []
             },
+            "tests": []
+        },
+        {
+            "_id": "cdab35f9-4ed4-41a2-bcfd-3fa4d69b9938",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "e5341bf3-cf24-4d25-babb-998608e76330",
+            "name": "Bill list",
+            "url": "localhost:3000/ProyectoFinal/v1/bill/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-11T06:24:07.641Z",
+            "modified": "2024-03-11T06:24:07.641Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMjAwMDkyZjg1NWFmMTdiODJjNmMiLCJub21icmUiOiJMaW9uZWwgTWVzc2kiLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMTMxNzQyLCJleHAiOjE3MTAxNDYxNDJ9.4ntGM0Im631ZdWHkFYDZuVMYH5a5Yxt0XFhLMumqnSg"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
