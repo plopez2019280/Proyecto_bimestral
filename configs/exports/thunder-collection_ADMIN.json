@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "ADMIN",
-    "dateExported": "2024-03-10T06:06:09.458Z",
+    "dateExported": "2024-03-11T05:25:20.603Z",
     "version": "1.1",
     "folders": [
         {
@@ -19,6 +19,13 @@
             "sortNum": 20000
         },
         {
+            "_id": "bd5acc26-e710-44d6-93f4-0caabe143cb3",
+            "name": "Cart",
+            "containerId": "",
+            "created": "2024-03-11T04:26:03.825Z",
+            "sortNum": 25000
+        },
+        {
             "_id": "89bd305f-9d22-4a0b-a518-2aebc8a048f7",
             "name": "Search",
             "containerId": "",
@@ -27,6 +34,46 @@
         }
     ],
     "requests": [
+        {
+            "_id": "b25d9e50-e712-49ef-b678-f10b90651c39",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "bd5acc26-e710-44d6-93f4-0caabe143cb3",
+            "name": "Register item",
+            "url": "localhost:3000/ProyectoFinal/v1/cart/65ed4c9ba8b648dfbdce962f",
+            "method": "POST",
+            "sortNum": 2500,
+            "created": "2024-03-11T04:26:32.068Z",
+            "modified": "2024-03-11T04:26:32.068Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMjAwMDkyZjg1NWFmMTdiODJjNmMiLCJub21icmUiOiJMaW9uZWwgTWVzc2kiLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMTMwODgzLCJleHAiOjE3MTAxNDUyODN9.5TRPedh3YxWVMm8O3ZK0J_NTED6gDgYFYstdPKl3f-g"
+                }
+            ],
+            "params": [],
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "87fe33d0-3afd-4f0c-a2e0-8db41cd1bac5",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "bd5acc26-e710-44d6-93f4-0caabe143cb3",
+            "name": "Item list",
+            "url": "localhost:3000/ProyectoFinal/v1/cart/",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2024-03-11T04:26:37.173Z",
+            "modified": "2024-03-11T04:26:37.173Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMjAwMDkyZjg1NWFmMTdiODJjNmMiLCJub21icmUiOiJMaW9uZWwgTWVzc2kiLCJjYXJ0IjpbXSwiaWF0IjoxNzEwMTMwODgzLCJleHAiOjE3MTAxNDUyODN9.5TRPedh3YxWVMm8O3ZK0J_NTED6gDgYFYstdPKl3f-g"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
         {
             "_id": "dfd730a9-fcad-47f9-af9e-8aa00b6003d4",
             "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
@@ -64,6 +111,26 @@
                 "raw": "{\n    \"nombre\": \"botines\"\n}",
                 "form": []
             },
+            "tests": []
+        },
+        {
+            "_id": "e03a4eac-4e8b-4e9d-a148-bf218c4968ec",
+            "colId": "0fe27c1c-866b-4711-9438-717de1b25634",
+            "containerId": "bd5acc26-e710-44d6-93f4-0caabe143cb3",
+            "name": "Delete item",
+            "url": "localhost:8080/api/cart/eliminar/63f424b977bbd95a037df470",
+            "method": "DELETE",
+            "sortNum": 15000,
+            "created": "2024-03-11T04:32:10.045Z",
+            "modified": "2024-03-11T04:32:10.045Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVjZWFmYTU4MmVlNjVmNDY4ZjliZmEiLCJub21icmUiOiJNaWNoYWVsIFNhbHZhdGllcnJhIiwiY2FydCI6W10sImlhdCI6MTcxMDAyNTc5NCwiZXhwIjoxNzEwMDQwMTk0fQ.xfpWGE3Z9G9JPOCo_07cPAFInj3U55FMt2za2_ZMLGw"
+                }
+            ],
+            "params": [],
+            "reqType": "del",
             "tests": []
         },
         {
